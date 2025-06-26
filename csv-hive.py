@@ -8,7 +8,6 @@ HIVE_TABLE_NAME = "user_country"
 
 spark = SparkSession.builder \
     .appName("CSVToHiveJob") \
-    .config("spark.sql.warehouse.dir", "/warehouse/tablespace/managed/hive") \
     .enableHiveSupport() \
     .getOrCreate()
 
