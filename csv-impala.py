@@ -8,7 +8,6 @@ HIVE_IMPALA_TABLE_NAME = "user_country_parquet" # Changed table name to indicate
 
 spark = SparkSession.builder \
     .appName("CSVToImpalaParquetTableJob") \
-    .config("spark.sql.warehouse.dir", "/warehouse/tablespace/managed/hive") \
     .enableHiveSupport() \
     .getOrCreate()
 
