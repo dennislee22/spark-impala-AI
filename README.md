@@ -1,4 +1,4 @@
-# CDE Spark -> Hive/Impala -> ML/AI
+# Spark -> Hive/Impala -> ML/AI
 
 ## Create Spark Job in CDE
 
@@ -69,14 +69,20 @@ only showing top 5 rows
 
 <img width="1443" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
 
-- I can also run Spark job inside CAI Workbench to handle data transformation. In this case, I create a Spark Session with Hive support for reading Impala table (sitting in the data lake) and subsequently converting `Spark DataFrame` to `Pandas DataFrame`. During this process, the system spawns Spark executor pods to carry out the Spark job seamlessly.
+- I can also run Spark job inside CAI Workbench to handle data transformation. In this case, I create a Spark Session with Hive support for reading Impala table (sitting in the data lake) and subsequently converting `Spark DataFrame` to `Pandas DataFrame`. During this process, the system spawns Spark executor pods in the underlying K8s platform to carry out the Spark job seamlessly.
 ```
 NAME                            READY   STATUS    RESTARTS   AGE
 43fbd1dyokdze92c                5/5     Running   0          114s
 cdsw-43fbd1dyokdze92c-exec-1    5/5     Running   0          32s
 cdsw-43fbd1dyokdze92c-exec-2    5/5     Running   0          12s
 ```
+- Alternatively, you may also run Spark job in the YARN cluster in the data lake if you are running out of resources in the K8s platform.
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/6a59eb0c-371a-4d50-b98b-8fbbee96d537" />
+<img width="1449" alt="image" src="https://github.com/user-attachments/assets/d60744d5-8fe2-41b1-a5ce-ac74477ce005" />
+
 - Finally, use matplotlib.pyplot to produce visual diagrams based on the converted `Pandas DataFrame`. Check out the entire EDA script.
+<img width="1428" alt="image" src="https://github.com/user-attachments/assets/66cc6752-65d4-4fba-b86b-339c98c15523" />
+
 
 
 
