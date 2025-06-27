@@ -90,7 +90,7 @@ only showing top 5 rows
 1. Create a Jupyterlab session in CAI with Spark enabled.
 <img width="1443" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
 
-2. Apart from CDE, I can also run Spark job [run-EDA.py](run-EDA.py) inside CAI Workbench to handle data transformation. In this case, I create a Spark Session with Hive support for reading Impala table (sitting in the data lake) and subsequently converting `Spark DataFrame` to `Pandas DataFrame`. During this process, the system spawns Spark executor pods in the underlying K8s platform to carry out the Spark job seamlessly.
+2. Apart from CDE, I can also run Spark job [run-EDA.ipynb](run-EDA.ipynb) inside CAI Workbench to handle data transformation. In this case, I create a Spark Session with Hive support for reading Impala table (sitting in the data lake) and subsequently converting `Spark DataFrame` to `Pandas DataFrame`. During this process, the system spawns Spark executor pods in the underlying K8s platform to carry out the Spark job seamlessly.
 ```
 NAME                            READY   STATUS    RESTARTS   AGE
 43fbd1dyokdze92c                5/5     Running   0          114s
