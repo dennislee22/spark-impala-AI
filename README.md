@@ -1,11 +1,13 @@
-# Spark -> Hive/Impala -> ML/AI
+# Spark -> Hive/Impala -> AI/ML
 <img width="500" src="https://github.com/user-attachments/assets/351d84a4-88ff-45b5-bd19-b4efcdca2cbf" />
 
 
-## Create Spark Job in CDE
+## Run PySpark Job in CDE to transform CSV into Hive/Impala Table
 
+1. Create a Spark job in CDE by simply uploading this [csv-hive](csv-hive.py) or [csv-impala](csv-impala.py)script. This script will create a Spark session to transform data in CSV into a Hive/Impala table.
 <img width="1436" alt="image" src="https://github.com/user-attachments/assets/5533e598-e338-4b29-b865-ad04805189d9" />
 
+2. Spark job needs to know the source of Hive Metasore server. Enter the following Spark configurations in the job.
 ```
 spark.sql.hive.hiveserver2.jdbc.url=jdbc:hive2://base-01.dlee5.cldr.example:10000/default
 spark.sql.hive.hiveserver2.jdbc.url.principal=hive/_HOST@CLDR.EXAMPLE
