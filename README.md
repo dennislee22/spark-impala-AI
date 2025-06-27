@@ -55,7 +55,7 @@ Transformed DataFrame Sample:
 only showing top 5 rows
 ```
 
-## Run PySpark Job (Transform CSV into Hive Table)
+## Run PySpark Job in CDE to transform CSV into Hive Table
 
 <img width="1448" alt="image" src="https://github.com/user-attachments/assets/ae45c7a9-3169-4b4b-8f60-536d002bb316" />
 
@@ -63,6 +63,21 @@ only showing top 5 rows
 <img width="1450" alt="image" src="https://github.com/user-attachments/assets/e252ca37-02b2-4593-8cc6-c797f1d57173" />
 
 <img width="1458" alt="image" src="https://github.com/user-attachments/assets/d1d3d149-ddd7-4b61-b104-e2b6da0aa1af" />
+
+
+## EDA with Cloudera AI (CAI) Workbench
+
+<img width="1443" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
+
+- I can also run Spark job inside CAI Workbench to handle data transformation. In this case, I create a Spark Session with Hive support for reading Impala table (sitting in the data lake) and subsequently converting `Spark DataFrame` to `Pandas DataFrame`. During this process, the system spawns Spark executor pods to carry out the Spark job seamlessly.
+```
+NAME                            READY   STATUS    RESTARTS   AGE
+43fbd1dyokdze92c                5/5     Running   0          114s
+cdsw-43fbd1dyokdze92c-exec-1    5/5     Running   0          32s
+cdsw-43fbd1dyokdze92c-exec-2    5/5     Running   0          12s
+```
+- Finally, use matplotlib.pyplot to produce visual diagrams based on the converted `Pandas DataFrame`. Check out the entire EDA script.
+
 
 
 
