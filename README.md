@@ -1,5 +1,5 @@
 # Spark -> Hive/Impala -> ML/AI
-![cde-cdw-cml](https://github.com/user-attachments/assets/351d84a4-88ff-45b5-bd19-b4efcdca2cbf)
+<img width="500" src="https://github.com/user-attachments/assets/351d84a4-88ff-45b5-bd19-b4efcdca2cbf" />
 
 
 ## Create Spark Job in CDE
