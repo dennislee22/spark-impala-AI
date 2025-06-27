@@ -1,7 +1,14 @@
 # Spark -> Hive/Impala -> AI/ML
+<img width="803" alt="image" src="https://github.com/user-attachments/assets/18628d7c-ee5a-4eab-88f7-c40c843e504e" />
+
+There's a fundamental reason why Cloudera Data Services is engineered to consolidate CDE, CDW, and CAI on a unified platform, powered by K8s technology. This integrated approach delivers a seamless and secure experience across the entire data lifecycle:
+
+- CDE (Cloudera Data Engineering): Leverages Apache Spark and Airflow for robust and automated data transformation pipelines, ensuring data is prepared efficiently for downstream use.
+- CDW (Cloudera Data Warehouse): Provides powerful SQL data analytics capabilities, leveraging Hive/Impala SQL engines for high-performance business intelligence and reporting.
+- CAI (Cloudera AI): Empowers data scientists with JupyterLab IDE for exploratory data analysis, enabling rapid insights and model development directly on transformed data, all while maintaining stringent data security within the data lake.
+
+This article illustrates a simple data lifecycle use case leveraging the above components.
 <img width="500" src="https://github.com/user-attachments/assets/351d84a4-88ff-45b5-bd19-b4efcdca2cbf" />
-
-
 ## Run PySpark Job in CDE to transform CSV into Hive/Impala Table
 
 1. The content of the raw data in `data.csv` is shown below. The aim is to convert this data into usable dataframe for analysis purposes.
