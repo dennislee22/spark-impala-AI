@@ -4,15 +4,29 @@
 
 ## Run PySpark Job in CDE to transform CSV into Hive/Impala Table
 
-1. Create a Spark job in CDE by simply uploading this [csv-hive](csv-hive.py) or [csv-impala](csv-impala.py)script. This script will create a Spark session to transform data in CSV into a Hive/Impala table.
+1. The content of the raw data in `data.csv` is shown below. The aim is to convert this data into usable dataframe for analysis purposes.
+
+```
+id,name,value,city
+1,Charlie,192,Singapore
+2,Heidi,79,Tokyo
+3,Judy,101,New York
+4,Heidi,451,London
+5,David,430,Berlin
+6,Bob,350,Berlin
+.....
+```
+   
+2. Create a Spark job in CDE by simply uploading this [csv-hive](csv-hive.py) or [csv-impala](csv-impala.py) script. This script will create a Spark session to transform data in CSV into a Hive/Impala table.
 <img width="1436" alt="image" src="https://github.com/user-attachments/assets/5533e598-e338-4b29-b865-ad04805189d9" />
 
-2. Spark job needs to know the source of Hive Metasore server. Enter the following Spark configurations in the job.
+
+3. Spark job needs to know the source of Hive Metasore server. Enter the following Spark configurations in the job.
 ```
 spark.sql.hive.hiveserver2.jdbc.url=jdbc:hive2://base-01.dlee5.cldr.example:10000/default
 spark.sql.hive.hiveserver2.jdbc.url.principal=hive/_HOST@CLDR.EXAMPLE
 ```
-
+3. Upon successful execution of the job, you will see the similar snippet of the Spark driver log as follows.
 <img width="1444" alt="image" src="https://github.com/user-attachments/assets/8cc15600-e658-4415-8115-aa77f6822ed3" />
 
 ```
@@ -59,32 +73,35 @@ Transformed DataFrame Sample:
 only showing top 5 rows
 ```
 
-## Run PySpark Job in CDE to transform CSV into Hive Table
-
+4. As a result, the system creates the parquet files in the designated tablespace of the database, sitting in the datalake.
+   
 <img width="1448" alt="image" src="https://github.com/user-attachments/assets/ae45c7a9-3169-4b4b-8f60-536d002bb316" />
 
 ## Verify Hive/Impala table in CDW
+
+1. You may use Hue dashboard via CDW to verify the location of the output.
 <img width="1450" alt="image" src="https://github.com/user-attachments/assets/e252ca37-02b2-4593-8cc6-c797f1d57173" />
 
+2. Run simply SQL query to verify the table content.
 <img width="1458" alt="image" src="https://github.com/user-attachments/assets/d1d3d149-ddd7-4b61-b104-e2b6da0aa1af" />
-
 
 ## EDA with Cloudera AI (CAI) Workbench
 
+1. Create a Jupyterlab session in CAI with Spark enabled.
 <img width="1443" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
 
-- I can also run Spark job inside CAI Workbench to handle data transformation. In this case, I create a Spark Session with Hive support for reading Impala table (sitting in the data lake) and subsequently converting `Spark DataFrame` to `Pandas DataFrame`. During this process, the system spawns Spark executor pods in the underlying K8s platform to carry out the Spark job seamlessly.
+2. Apart from CDE, I can also run Spark job [run-EDA.py](run-EDA.py) inside CAI Workbench to handle data transformation. In this case, I create a Spark Session with Hive support for reading Impala table (sitting in the data lake) and subsequently converting `Spark DataFrame` to `Pandas DataFrame`. During this process, the system spawns Spark executor pods in the underlying K8s platform to carry out the Spark job seamlessly.
 ```
 NAME                            READY   STATUS    RESTARTS   AGE
 43fbd1dyokdze92c                5/5     Running   0          114s
 cdsw-43fbd1dyokdze92c-exec-1    5/5     Running   0          32s
 cdsw-43fbd1dyokdze92c-exec-2    5/5     Running   0          12s
 ```
-- Alternatively, you may also run Spark job in the YARN cluster in the data lake if you are running out of resources in the K8s platform.
+3. Alternatively, you may also run Spark job in the YARN cluster in the data lake as illustrated below. Simply enable the Spark pushdown option in the CAI project and subsequently create new CAI session, run the same EDA script.
 <img width="750" alt="image" src="https://github.com/user-attachments/assets/6a59eb0c-371a-4d50-b98b-8fbbee96d537" />
 <img width="1449" alt="image" src="https://github.com/user-attachments/assets/d60744d5-8fe2-41b1-a5ce-ac74477ce005" />
 
-- Finally, use matplotlib.pyplot to produce visual diagrams based on the converted `Pandas DataFrame`. Check out the entire EDA script.
+4. Finally, use matplotlib.pyplot to produce visual diagrams based on the converted `Pandas DataFrame`.
 <img width="1428" alt="image" src="https://github.com/user-attachments/assets/66cc6752-65d4-4fba-b86b-339c98c15523" />
 
 
