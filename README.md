@@ -2,16 +2,18 @@
 <img width="803" alt="image" src="https://github.com/user-attachments/assets/18628d7c-ee5a-4eab-88f7-c40c843e504e" />
 
 There's a fundamental reason why Cloudera Data Services is engineered to consolidate CDE, CDW, and CAI on a unified platform, powered by K8s technology. This integrated approach delivers a seamless and secure experience across the entire data lifecycle:
-
 - CDE (Cloudera Data Engineering): Leverages Apache Spark and Airflow for robust and automated data transformation pipelines, ensuring data is prepared efficiently for downstream use.
 - CDW (Cloudera Data Warehouse): Provides powerful SQL data analytics capabilities, leveraging Hive/Impala SQL engines for high-performance business intelligence and reporting.
-- CAI (Cloudera AI): Empowers data scientists with JupyterLab IDE for exploratory data analysis, enabling rapid insights and model development directly on transformed data, all while maintaining stringent data security within the data lake.
+- CAI (Cloudera AI): Empowers data scientists with ready-to-use inferencing service (engineering with Nvidia NIM) and JupyterLab IDE for exploratory data analysis. CAI enables rapid insights and model development directly on transformed data, all while maintaining stringent data security within the data lake.
 
-This article illustrates a simple data lifecycle use case leveraging the above components.
-<img width="500" src="https://github.com/user-attachments/assets/351d84a4-88ff-45b5-bd19-b4efcdca2cbf" />
+This article illustrates a simple end-to-end data lifecycle use case leveraging CDE, CDW and CAI, all under one roof. The aim is to transform the raw data sitting in the data lake into the usable dataframe for analysis purposes at a later stage.
+
+![cde-cdw-cml](https://github.com/user-attachments/assets/f4670d9f-b38a-4376-849b-a3e640b66731)
+
+
 ## Run PySpark Job in CDE to transform CSV into Hive/Impala Table
 
-1. The content of the raw data in `data.csv` is shown below. The aim is to convert this data into usable dataframe for analysis purposes.
+1. The content of the raw data `data.csv` residing in the HDFS is shown as follows. 
 
 ```
 id,name,value,city
