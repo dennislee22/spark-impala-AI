@@ -1,5 +1,6 @@
 # Spark -> Hive/Impala -> AI/ML
-<img width="803" alt="image" src="https://github.com/user-attachments/assets/18628d7c-ee5a-4eab-88f7-c40c843e504e" />
+
+![dataservices](https://github.com/user-attachments/assets/0e73b226-44d1-4430-88e9-aa41a17cb911)
 
 There's a fundamental reason why Cloudera Data Services is engineered to consolidate CDE, CDW, and CAI on a unified platform, powered by K8s technology. This integrated approach delivers a seamless and secure experience across the entire data lifecycle:
 - CDE (Cloudera Data Engineering): Leverages Apache Spark and Airflow for robust and automated data transformation pipelines, ensuring data is prepared efficiently for downstream use.
