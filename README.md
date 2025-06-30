@@ -7,14 +7,14 @@ There's a fundamental reason why Cloudera Data Services is engineered to consoli
 - CAI (Cloudera AI): Empowers data scientists with ready-to-use inferencing service (engineering with Nvidia NIM) and JupyterLab IDE for exploratory data analysis. CAI enables rapid insights and model development directly on transformed data, all while maintaining stringent data security within the data lake.
 
 This article illustrates a simple end-to-end data lifecycle use case leveraging CDE, CDW and CAI, all under one roof. The aim is to transform the raw data sitting in the data lake into the usable dataframe for analysis purposes at a later stage.
-![dataservices-flow2](https://github.com/user-attachments/assets/259dc563-dbc0-4b9f-8052-c2d821d77eb5)
-
 
 ## <a name="toc_0"></a>Table of Contents
 [//]: # (TOC)
 [Run PySpark Job in CDE to transform CSV into Hive/Impala Table](#toc_0)<br>
 [Verify Hive/Impala table in CDW](#toc_1)<br>
 [EDA with Cloudera AI (CAI) Workbench](#toc_2)<br>
+
+![dataservices-flow2](https://github.com/user-attachments/assets/259dc563-dbc0-4b9f-8052-c2d821d77eb5)
 
 ### <a name="toc_0"></a>Run PySpark Job in CDE to transform CSV into Hive/Impala Table
 
