@@ -111,7 +111,7 @@ cdsw-43fbd1dyokdze92c-exec-2    5/5     Running   0          12s
 <img width="750" alt="image" src="https://github.com/user-attachments/assets/6a59eb0c-371a-4d50-b98b-8fbbee96d537" />
 <img width="1449" alt="image" src="https://github.com/user-attachments/assets/d60744d5-8fe2-41b1-a5ce-ac74477ce005" />
 
-4. Finally, use matplotlib.pyplot to produce visual diagrams based on the converted `Pandas DataFrame`.
+4. Finally, use `matplotlib.pyplot` Python library to produce visual diagrams based on the converted `Pandas DataFrame`.
 <img width="1428" alt="image" src="https://github.com/user-attachments/assets/66cc6752-65d4-4fba-b86b-339c98c15523" />
 
 
