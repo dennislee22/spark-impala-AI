@@ -9,7 +9,14 @@ There's a fundamental reason why Cloudera Data Services is engineered to consoli
 This article illustrates a simple end-to-end data lifecycle use case leveraging CDE, CDW and CAI, all under one roof. The aim is to transform the raw data sitting in the data lake into the usable dataframe for analysis purposes at a later stage.
 ![dataservices-flow2](https://github.com/user-attachments/assets/259dc563-dbc0-4b9f-8052-c2d821d77eb5)
 
-## Run PySpark Job in CDE to transform CSV into Hive/Impala Table
+
+## <a name="toc_0"></a>Table of Contents
+[//]: # (TOC)
+[Run PySpark Job in CDE to transform CSV into Hive/Impala Table](#toc_0)<br>
+[Verify Hive/Impala table in CDW](#toc_1)<br>
+[EDA with Cloudera AI (CAI) Workbench](#toc_2)<br>
+
+### <a name="toc_0"></a>Run PySpark Job in CDE to transform CSV into Hive/Impala Table
 
 1. The content of the raw data `data.csv` residing in the HDFS is shown as follows. 
 
@@ -84,7 +91,7 @@ only showing top 5 rows
    
 <img width="1448" alt="image" src="https://github.com/user-attachments/assets/ae45c7a9-3169-4b4b-8f60-536d002bb316" />
 
-## Verify Hive/Impala table in CDW
+### <a name="toc_1"></a>Verify Hive/Impala table in CDW
 
 1. You may use Hue dashboard via CDW to verify the location of the output.
 <img width="1450" alt="image" src="https://github.com/user-attachments/assets/e252ca37-02b2-4593-8cc6-c797f1d57173" />
@@ -92,7 +99,7 @@ only showing top 5 rows
 2. Run simply SQL query to verify the table content.
 <img width="1458" alt="image" src="https://github.com/user-attachments/assets/d1d3d149-ddd7-4b61-b104-e2b6da0aa1af" />
 
-## EDA with Cloudera AI (CAI) Workbench
+### <a name="toc_2"></a>EDA with Cloudera AI (CAI) Workbench
 
 1. Create a Jupyterlab session in CAI with Spark enabled.
 <img width="1443" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
