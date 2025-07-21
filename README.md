@@ -120,7 +120,7 @@ cdsw-43fbd1dyokdze92c-exec-2    5/5     Running   0          12s
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/66cc6752-65d4-4fba-b86b-339c98c15523" />
 
 ### Conclusion
-Cloudera Data Services unifies Spark/Airflow for ETL, Hive/Impala for SQL analytics, and JupyterLab/Spark for EDA and AI model development. on a single Kubernetes platform for a complete data lifecycle. This integrated approach ensures data is governed and secured in one place across all analytics and AI functions. Ultimately, this removes the "integration tax", eliminating the cost and complexity of connecting disparate third-party systems.
+Cloudera Data Services unifies Spark/Airflow for ETL, Hive/Impala for SQL analytics, and JupyterLab/Spark for EDA and AI model development on a single Kubernetes platform for a complete data lifecycle. This integrated approach ensures data is governed and secured in one place across all analytics and AI functions. Ultimately, this removes the "integration tax", eliminating the cost and complexity of connecting disparate third-party systems.
 
 
 
