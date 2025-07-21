@@ -32,7 +32,7 @@ id,name,value,city
 ```
    
 2. Create a Spark job in CDE by simply uploading this [csv-hive](csv-hive.py) or [csv-impala](csv-impala.py) script. This script will create a Spark session to transform data in CSV into a Hive/Impala table.
-<img width="1436" alt="image" src="https://github.com/user-attachments/assets/5533e598-e338-4b29-b865-ad04805189d9" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/5533e598-e338-4b29-b865-ad04805189d9" />
 
 
 3. Spark job needs to know the source of Hive Metasore server. Enter the following Spark configurations in the job.
@@ -42,7 +42,7 @@ spark.sql.hive.hiveserver2.jdbc.url.principal=hive/_HOST@CLDR.EXAMPLE
 ```
 
 4. Upon successful execution of the job, you will see the similar snippet of the Spark driver log as follows.
-<img width="1444" alt="image" src="https://github.com/user-attachments/assets/8cc15600-e658-4415-8115-aa77f6822ed3" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/8cc15600-e658-4415-8115-aa77f6822ed3" />
 
 ```
 Spark Session created with Hive support.
@@ -90,20 +90,20 @@ only showing top 5 rows
 
 5. As a result, the system creates the parquet files in the designated tablespace of the database, sitting in the datalake.
    
-<img width="1448" alt="image" src="https://github.com/user-attachments/assets/ae45c7a9-3169-4b4b-8f60-536d002bb316" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/ae45c7a9-3169-4b4b-8f60-536d002bb316" />
 
 ### <a name="toc_1"></a>2. Verify Hive/Impala table in CDW
 
 1. You may use Hue dashboard via CDW to verify the location of the output.
-<img width="1450" alt="image" src="https://github.com/user-attachments/assets/e252ca37-02b2-4593-8cc6-c797f1d57173" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/e252ca37-02b2-4593-8cc6-c797f1d57173" />
 
 2. Run simply SQL query to verify the table content.
-<img width="1458" alt="image" src="https://github.com/user-attachments/assets/d1d3d149-ddd7-4b61-b104-e2b6da0aa1af" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/d1d3d149-ddd7-4b61-b104-e2b6da0aa1af" />
 
 ### <a name="toc_2"></a>3. EDA with Cloudera AI (CAI) Workbench
 
 1. Create a Jupyterlab session in CAI with Spark enabled.
-<img width="1443" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
 
 2. Besides CDE, I can also run Spark job (as illustrated in [run-EDA.ipynb](run-EDA.ipynb)) inside CAI Workbench to handle data transformation. In this case, I create a Spark Session with Hive support to read Impala table (sitting in the data lake) and subsequently converting `Spark DataFrame` into `Pandas DataFrame`. During this process, the system spawns Spark executor pods in the underlying K8s platform to carry out the Spark job accordingly.
 ```
@@ -114,10 +114,10 @@ cdsw-43fbd1dyokdze92c-exec-2    5/5     Running   0          12s
 ```
 3. Alternatively, I can alsoo run Spark job in the YARN cluster in the data lake as illustrated below. Simply enable the `Spark pushdown` option in the CAI project and subsequently create a new CAI session, run the same [EDA script](run-EDA.ipynb).
 <img width="750" alt="image" src="https://github.com/user-attachments/assets/6a59eb0c-371a-4d50-b98b-8fbbee96d537" />
-<img width="1449" alt="image" src="https://github.com/user-attachments/assets/d60744d5-8fe2-41b1-a5ce-ac74477ce005" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/d60744d5-8fe2-41b1-a5ce-ac74477ce005" />
 
 4. Finally, use `matplotlib.pyplot` Python library to produce visual diagrams based on the converted `Pandas DataFrame`.
-<img width="1428" alt="image" src="https://github.com/user-attachments/assets/66cc6752-65d4-4fba-b86b-339c98c15523" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/66cc6752-65d4-4fba-b86b-339c98c15523" />
 
 ### Conclusion
 Cloudera Data Services unifies Spark/Airflow for ETL, Hive/Impala for SQL analytics, and JupyterLab/Spark for EDA and AI model development. on a single Kubernetes platform for a complete data lifecycle. This integrated approach ensures data is governed and secured in one place across all analytics and AI functions. Ultimately, this removes the "integration tax", eliminating the cost and complexity of connecting disparate third-party systems.
