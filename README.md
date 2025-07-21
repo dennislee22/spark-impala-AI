@@ -40,7 +40,8 @@ id,name,value,city
 spark.sql.hive.hiveserver2.jdbc.url=jdbc:hive2://base-01.dlee5.cldr.example:10000/default
 spark.sql.hive.hiveserver2.jdbc.url.principal=hive/_HOST@CLDR.EXAMPLE
 ```
-3. Upon successful execution of the job, you will see the similar snippet of the Spark driver log as follows.
+
+4. Upon successful execution of the job, you will see the similar snippet of the Spark driver log as follows.
 <img width="1444" alt="image" src="https://github.com/user-attachments/assets/8cc15600-e658-4415-8115-aa77f6822ed3" />
 
 ```
@@ -87,7 +88,7 @@ Transformed DataFrame Sample:
 only showing top 5 rows
 ```
 
-4. As a result, the system creates the parquet files in the designated tablespace of the database, sitting in the datalake.
+5. As a result, the system creates the parquet files in the designated tablespace of the database, sitting in the datalake.
    
 <img width="1448" alt="image" src="https://github.com/user-attachments/assets/ae45c7a9-3169-4b4b-8f60-536d002bb316" />
 
