@@ -12,7 +12,7 @@ This article illustrates a simple end-to-end data lifecycle use case leveraging 
 [//]: # (TOC)
 1. [Run PySpark Job in CDE to transform CSV into Hive/Impala Table](#toc_0)<br>
 2. [Verify Hive/Impala table in CDW](#toc_1)<br>
-3. [Run PySpark Job in CDE to transform CSV into Iceberg Table in Impala(#toc_2)<br>
+3. [Run PySpark Job in CDE to transform CSV into Iceberg Table in Impala](#toc_2)<br>
 4. [EDA with Cloudera AI (CAI) Workbench](#toc_3)<br>
 
 ![dataservices-flow2](https://github.com/user-attachments/assets/259dc563-dbc0-4b9f-8052-c2d821d77eb5)
