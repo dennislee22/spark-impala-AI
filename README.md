@@ -140,7 +140,8 @@ SELECT COUNT(*) FROM celltowers
 
 7. Check the history of the Iceberg table. Note that there are 3 snapshots created as a result of the Spark jobs.
 
-<img width="900" height="644" alt="image" src="https://github.com/user-attachments/assets/f3d0100a-b56d-4b7b-9e5a-961317ccf327" />
+<img width="800" height="644" alt="image" src="https://github.com/user-attachments/assets/f3d0100a-b56d-4b7b-9e5a-961317ccf327" />
+
 
 8. To showcase `Time Travel` feature in Iceberg, check the number of rows with different timestamp.
 
