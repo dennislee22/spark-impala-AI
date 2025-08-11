@@ -114,6 +114,7 @@ id,device_id,manufacturer,event_type,longitude,latitude,iot_signal_1,iot_signal_
 4,0x1000000000014,TelecomWorld,battery 10%,-83.44709,51.972874,10,55,102,1
 5,0x100000000001c,MyCellular,device error,-83.46079,51.81613,3,50,105,0
 .....
+```
 
 2. Create a Spark job in CDE by simply uploading this [celltower-csv-iceberg.py](celltower-csv-iceberg.py) script. This script will create a Spark session to transform data in CSV into an Iceberg table.
 
