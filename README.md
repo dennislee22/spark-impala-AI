@@ -12,7 +12,8 @@ This article illustrates a simple end-to-end data lifecycle use case leveraging 
 [//]: # (TOC)
 1. [Run PySpark Job in CDE to transform CSV into Hive/Impala Table](#toc_0)<br>
 2. [Verify Hive/Impala table in CDW](#toc_1)<br>
-3. [EDA with Cloudera AI (CAI) Workbench](#toc_2)<br>
+3. [Run PySpark Job in CDE to transform CSV into Iceberg Table in Impala(#toc_2)<br>
+4. [EDA with Cloudera AI (CAI) Workbench](#toc_3)<br>
 
 ![dataservices-flow2](https://github.com/user-attachments/assets/259dc563-dbc0-4b9f-8052-c2d821d77eb5)
 
@@ -100,7 +101,61 @@ only showing top 5 rows
 2. Run simply SQL query to verify the table content.
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/d1d3d149-ddd7-4b61-b104-e2b6da0aa1af" />
 
-### <a name="toc_2"></a>3. EDA with Cloudera AI (CAI) Workbench
+### <a name="toc_2"></a>3. Run PySpark Job in CDE to transform CSV into Iceberg Table in Impala
+
+1. The content of the raw data `cell_towers.csv` residing in the HDFS is shown as follows. Suppose the initial version of this csv file has 1440 rows.
+
+```
+id,device_id,manufacturer,event_type,longitude,latitude,iot_signal_1,iot_signal_3,iot_signal_4,cell_tower_failure
+0,0x1000000000005,TelecomWorld,system malfunction,-83.61318,51.656384,3,51,104,1
+1,0x100000000001d,TelecomWorld,battery 10%,-83.04828,51.610226,9,52,103,0
+2,0x1000000000008,TelecomWorld,battery 10%,-83.60245,51.892113,6,54,103,0
+3,0x100000000001b,NewComm,battery 10%,-82.80548,51.913082,2,53,105,0
+4,0x1000000000014,TelecomWorld,battery 10%,-83.44709,51.972874,10,55,102,1
+5,0x100000000001c,MyCellular,device error,-83.46079,51.81613,3,50,105,0
+.....
+
+2. Create a Spark job in CDE by simply uploading this [celltower-csv-iceberg.py](celltower-csv-iceberg.py) script. This script will create a Spark session to transform data in CSV into an Iceberg table.
+
+3. Upon successful Spark job run, execute the following SQL query in CDW.
+
+```
+SELECT COUNT(*) FROM celltowers
+
+1440
+```
+
+4. Rerun the same spark job to append the same or different csv files with the same number of rows into the same Iceberg table.
+
+5. Execute the following queries in CDW. Note that the number of rows have doubled as the Spark job append the csv files into the same table.
+
+```
+SELECT COUNT(*) FROM celltowers
+
+2880
+```
+
+6. Rerun the same spark job to append the same or different csv files with the same number of rows into the same Iceberg table.
+
+7. Check the history of the Iceberg table. Note that there are 3 snapshots created as a result of the Spark jobs.
+
+<img width="900" height="644" alt="image" src="https://github.com/user-attachments/assets/f3d0100a-b56d-4b7b-9e5a-961317ccf327" />
+
+8. To showcase `Time Travel` feature in Iceberg, check the number of rows with different timestamp.
+
+```
+SELECT count(*) FROM celltowers FOR SYSTEM_TIME AS OF '2025-08-11 11:35:00.000000';
+
+1440
+```
+
+```
+SELECT count(*) FROM celltowers FOR SYSTEM_TIME AS OF '2025-08-11 11:55:00.000000';
+
+4320
+```
+
+### <a name="toc_3"></a>4. EDA with Cloudera AI (CAI) Workbench
 
 1. Create a Jupyterlab session in CAI with Spark enabled.
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
