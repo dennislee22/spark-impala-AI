@@ -13,7 +13,8 @@ This article illustrates a simple end-to-end data lifecycle use case leveraging 
 1. [Run PySpark Job in CDE to transform CSV into Hive/Impala Table](#toc_0)<br>
 2. [Verify Hive/Impala table in CDW](#toc_1)<br>
 3. [Run PySpark Job in CDE to transform CSV into Iceberg Table in Impala](#toc_2)<br>
-4. [EDA with Cloudera AI (CAI) Workbench](#toc_3)<br>
+4. [Run PySpark Job with Airflow in CDE](#toc_3)<br>
+5. [EDA with Cloudera AI (CAI) Workbench](#toc_4)<br>
 
 ![dataservices-flow2](https://github.com/user-attachments/assets/259dc563-dbc0-4b9f-8052-c2d821d77eb5)
 
@@ -157,7 +158,26 @@ SELECT count(*) FROM celltowers FOR SYSTEM_TIME AS OF '2025-08-11 11:55:00.00000
 4320
 ```
 
-### <a name="toc_3"></a>4. EDA with Cloudera AI (CAI) Workbench
+### <a name="toc_3"></a>4. Run PySpark Job with Airflow in CDE
+
+1. Navigate to the CDE Job page and create a new Airflow job with [csv-iceberg-DAG.py](csv-iceberg-DAG.py).
+
+<img width="800" height="701" alt="image" src="https://github.com/user-attachments/assets/10ffcda8-9fab-4f3c-b1f9-ea6ad77d0a0d" />
+
+2. Note that job is now scheduled as written in the DAG script.
+   
+<img width="800" height="269" alt="image" src="https://github.com/user-attachments/assets/d379767e-8452-45b0-9a48-391879801cb3" />
+
+3. Click on the DAG job, navigate to `Airflow UI` tab to explore the job status.
+   
+<img width="800" height="728" alt="image" src="https://github.com/user-attachments/assets/4e0c6912-59ff-45a6-bd5d-3cd728983824" />
+
+<img width="800" height="378" alt="image" src="https://github.com/user-attachments/assets/fb788d78-a96c-40ab-9350-08f4dc049259" />
+
+<img width="800" height="509" alt="image" src="https://github.com/user-attachments/assets/5347c1c2-e36d-46ee-b0a7-a3f5a9058df5" />
+
+
+### <a name="toc_4"></a>5. EDA with Cloudera AI (CAI) Workbench
 
 1. Create a Jupyterlab session in CAI with Spark enabled.
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/e8cc5605-735e-4eff-9538-e14baf9ede15" />
