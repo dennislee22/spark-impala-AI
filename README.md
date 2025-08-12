@@ -20,7 +20,7 @@ This article illustrates a simple end-to-end data lifecycle use case leveraging 
 
 ### <a name="toc_0"></a>1. Run PySpark Job in CDE to transform CSV into Hive/Impala Table
 
-1. The content of the raw data `data.csv` residing in the HDFS is shown as follows. 
+1. The content of the raw data `data.csv` residing in the HDFS as shown below. 
 
 ```
 id,name,value,city
@@ -104,7 +104,7 @@ only showing top 5 rows
 
 ### <a name="toc_2"></a>3. Run PySpark Job in CDE to transform CSV into Iceberg Table in Impala
 
-1. The content of the raw data `cell_towers.csv` residing in the HDFS is shown as follows. Suppose the initial version of this csv file has 1440 rows.
+1. The content of the raw data `cell_towers.csv` residing in the HDFS as shown below. Suppose the initial version of this csv file has 1440 rows.
 
 ```
 id,device_id,manufacturer,event_type,longitude,latitude,iot_signal_1,iot_signal_3,iot_signal_4,cell_tower_failure
