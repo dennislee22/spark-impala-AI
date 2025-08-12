@@ -158,6 +158,11 @@ SELECT count(*) FROM celltowers FOR SYSTEM_TIME AS OF '2025-08-11 11:55:00.00000
 4320
 ```
 
+9. You may explore the metadata files of this Iceberg table in HDFS as shown below.
+
+<img width="800" height="751" alt="image" src="https://github.com/user-attachments/assets/ccbc4608-d453-4f93-b65f-0f2c30244f75" />
+
+
 ### <a name="toc_3"></a>4. Run PySpark Job with Airflow in CDE
 
 1. Navigate to the CDE Job page and create a new Airflow job with [csv-iceberg-DAG.py](csv-iceberg-DAG.py).
