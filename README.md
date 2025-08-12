@@ -158,7 +158,26 @@ SELECT count(*) FROM celltowers FOR SYSTEM_TIME AS OF '2025-08-11 11:55:00.00000
 4320
 ```
 
-9. You may explore the metadata files of this Iceberg table in HDFS as shown below.
+9. Alternatively, you may also use JDBC to connect to the Virtual Warehouse remotely. See [sql-JDBC-Impala.py](sql-JDBC-Impala.py) as reference.
+
+```
+$ JAVA_HOME=/opt/homebrew/opt/openjdk python3 sqlrunImpala.py 
+Attempting to connect to Impala...
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.jpype.JPypeContext in an unnamed module (file:/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/org.jpype.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Successfully connected to Impala.
+
+Query Result:
+------------
+COUNT(*): 5760
+------------
+Connection closed.
+```
+
+10. You may explore the metadata files of this Iceberg table in HDFS as shown below.
 
 <img width="800" height="751" alt="image" src="https://github.com/user-attachments/assets/ccbc4608-d453-4f93-b65f-0f2c30244f75" />
 
