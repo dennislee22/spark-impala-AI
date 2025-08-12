@@ -129,7 +129,7 @@ SELECT COUNT(*) FROM celltowers
 
 4. Rerun the same spark job to append the same or different csv files with the same number of rows into the same Iceberg table.
 
-5. Execute the following queries in CDW. Note that the number of rows have doubled as the Spark job append the csv files into the same table.
+5. Execute the following query in CDW. Note that the number of rows have doubled as the Spark job append the csv files into the same table.
 
 ```
 SELECT COUNT(*) FROM celltowers
@@ -176,6 +176,13 @@ SELECT count(*) FROM celltowers FOR SYSTEM_TIME AS OF '2025-08-11 11:55:00.00000
 
 <img width="800" height="509" alt="image" src="https://github.com/user-attachments/assets/5347c1c2-e36d-46ee-b0a7-a3f5a9058df5" />
 
+4. Navigate back to CDW to run SQL query to verify that Spark job has successfully append new set of csv rows into Iceberg table (triggered by Airflow).
+
+```
+SELECT count(*) FROM celltowers FOR SYSTEM_TIME AS OF '2025-08-14 11:55:00.000000';
+
+5760
+```
 
 ### <a name="toc_4"></a>5. EDA with Cloudera AI (CAI) Workbench
 
