@@ -225,7 +225,17 @@ cdsw-43fbd1dyokdze92c-exec-2    5/5     Running   0          12s
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/d60744d5-8fe2-41b1-a5ce-ac74477ce005" />
 
 4. Finally, use `matplotlib.pyplot` Python library to produce visual diagrams based on the converted `Pandas DataFrame`.
+
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/66cc6752-65d4-4fba-b86b-339c98c15523" />
+
+
+5. To access CAI/CML remotely using API, you may see the following example. Firstly, create the API key at the `User Settings` page. Use the generated key in the API client to access CAI.
+
+<img width="800" height="660" alt="image" src="https://github.com/user-attachments/assets/dad1e663-13c3-414a-9808-979097221e6d" />
+
+
+<img width="800" height="725" alt="image" src="https://github.com/user-attachments/assets/67ba9d90-eb4f-4ddf-a9f5-6f9c1a287686" />
+
 
 ### Conclusion
 Cloudera Data Services unifies Spark/Airflow for ETL, Hive/Impala for SQL analytics, and JupyterLab/Spark for EDA and AI model development on a single Kubernetes platform for a complete data lifecycle. This integrated approach ensures data is governed and secured in one place across all analytics and AI functions. Ultimately, this removes the "integration tax", eliminating the cost and complexity of connecting disparate third-party systems.
